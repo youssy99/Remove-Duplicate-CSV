@@ -2,6 +2,7 @@ import csv
 import os
 output="newContacts.csv"
 fields=["Name","Given Name","Additional Name","Family Name","Yomi Name","Given Name Yomi","Additional Name Yomi","Family Name Yomi","Name Prefix","Name Suffix","Initials","Nickname","Short Name","Maiden Name","Birthday","Gender","Location","Billing Information","Directory Server","Mileage","Occupation","Hobby","Sensitivity","Priority","Subject","Notes","Language","Photo","Group Membership","E-mail 1 - Type","E-mail 1 - Value","E-mail 2 - Type","E-mail 2 - Value","E-mail 3 - Type","E-mail 3 - Value","IM 1 - Type","IM 1 - Service","IM 1 - Value","Phone 1 - Type","Phone 1 - Value","Phone 2 - Type","Phone 2 - Value","Address 1 - Type","Address 1 - Formatted","Address 1 - Street","Address 1 - City","Address 1 - PO Box","Address 1 - Region","Address 1 - Postal Code","Address 1 - Country","Address 1 - Extended Address","Organization 1 - Type","Organization 1 - Name","Organization 1 - Yomi Name","Organization 1 - Title","Organization 1 - Department","Organization 1 - Symbol","Organization 1 - Location","Organization 1 - Job Description","Website 1 - Type","Website 1 - Value"]
+countries=["39","212"]
 reply=input(f"Hi {os.getlogin()}, do you want to import a csv file?")
 if reply=="yes" or reply=="Yes":
     print("Enter the file name: ")
@@ -31,7 +32,7 @@ if reply=="yes" or reply=="Yes":
                 if myList["Number"][i] not in newList["Number"]:
                     newList["Name"].append(myList["Name"][i])
                     newList["Type"].append(myList["Type"][i])
-                    if (myList["Number"][i].find("39")!=-1 or myList["Number"][i].find("212")!=-1 ):
+                    if (myList["Number"][i].find(countries[0])!=-1 or myList["Number"][i].find(countries[1])!=-1 ):
                         newList["Number"].append('+'+myList["Number"][i])
                     else:
                         newList["Number"].append(myList["Number"][i])
