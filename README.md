@@ -1,6 +1,6 @@
 This is a Python script that allow you to remove the duplicates from your contacts.
 
-How to use it?
+## How to use it?
 * Get the CSV file from google contacts
 * Put the file on the same folder where is contacts.py
 * Change the prefix in the countries variable with the one that you need
